@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
     :root {
       --bg-color: #0b0d10;
@@ -488,13 +492,21 @@
     }
 
     .guarantee-icon {
-      font-size: 1.5rem;
-      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: rgba(242, 166, 166, 0.1);
       color: var(--accent-pink);
-      padding: 10px;
+      padding: 12px;
       border-radius: 10px;
       border: 1px solid rgba(242, 166, 166, 0.2);
+      flex-shrink: 0;
+    }
+
+    .guarantee-icon i {
+      width: 24px;
+      height: 24px;
+      stroke-width: 2;
     }
 
     .guarantee-content h4 {
@@ -777,21 +789,27 @@
     <section class="guarantees-section">
       <div class="guarantees-grid">
         <div class="guarantee-item">
-          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-icon">
+            <i data-lucide="shield-check"></i>
+          </div>
           <div class="guarantee-content">
             <h4>Garantie 90 Jours</h4>
             <p>Essayez Rivelo sans risque. Si vous n'observez pas de résultats, nous vous remboursons intégralement.</p>
           </div>
         </div>
         <div class="guarantee-item">
-          <div class="guarantee-icon">🚚</div>
+          <div class="guarantee-icon">
+            <i data-lucide="truck"></i>
+          </div>
           <div class="guarantee-content">
             <h4>Livraison Gratuite</h4>
             <p>Expédition rapide et suivie sans frais cachés partout au Canada et en France.</p>
           </div>
         </div>
         <div class="guarantee-item">
-          <div class="guarantee-icon">⚡</div>
+          <div class="guarantee-icon">
+            <i data-lucide="zap"></i>
+          </div>
           <div class="guarantee-content">
             <h4>Garantie Appareil 2 Ans</h4>
             <p>Remplacement à neuf immédiat en cas de pépin technique sur votre appareil IPL.</p>
@@ -855,6 +873,9 @@
   </footer>
 
   <script>
+    /* Initialisation des icônes Lucide */
+    lucide.createIcons();
+
     /* Compte à rebours */
     const targetDate = new Date("November 3, 2026 19:00:00").getTime();
 
