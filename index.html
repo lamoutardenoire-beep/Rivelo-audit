@@ -221,8 +221,8 @@
       color: var(--text-muted);
     }
 
-    /* CONTENEUR VISUEL STYLE HIGH-TICKET */
- .visual-box {
+    /* CONTENEUR VISUEL AJUSTÉ */
+    .visual-box {
       background: transparent;
       border: none;
       padding: 0;
@@ -370,7 +370,7 @@
     /* Benefits Section */
     .benefits-section {
       max-width: 1100px;
-      margin: 20px auto 60px;
+      margin: 20px auto 40px;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -395,6 +395,126 @@
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+
+    /* SECTION GARANTIES & RÉASSURANCE (LOSS AVERSION) */
+    .guarantees-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .guarantees-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      background: rgba(242, 166, 166, 0.03);
+      border: 1px solid rgba(242, 166, 166, 0.2);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .guarantee-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .guarantee-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      background: rgba(242, 166, 166, 0.1);
+      color: var(--accent-pink);
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(242, 166, 166, 0.2);
+    }
+
+    .guarantee-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .guarantee-content p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SECTION FAQ DYNAMIQUE (ACCORDÉON) */
+    .faq-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item.active {
+      border-color: rgba(242, 166, 166, 0.4);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: #fff;
+      padding: 18px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 255, 255, 0.02);
+      transform: none;
+      box-shadow: none;
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--accent-pink);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 20px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 20px 20px 20px;
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease;
     }
 
     footer {
@@ -541,6 +661,82 @@
         <p>Seulement 500 unités réservées pour la première vague d'expédition du 3 novembre.</p>
       </div>
     </section>
+
+    <!-- SECTION GARANTIES & RÉASSURANCE -->
+    <section class="guarantees-section">
+      <div class="guarantees-grid">
+        <div class="guarantee-item">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-content">
+            <h4>Garantie 90 Jours</h4>
+            <p>Essayez Rivelo sans risque. Si vous n'observez pas de résultats, nous vous remboursons intégralement.</p>
+          </div>
+        </div>
+        <div class="guarantee-item">
+          <div class="guarantee-icon">🚚</div>
+          <div class="guarantee-content">
+            <h4>Livraison Gratuite</h4>
+            <p>Expédition rapide et suivie sans frais cachés partout au Canada et en France.</p>
+          </div>
+        </div>
+        <div class="guarantee-item">
+          <div class="guarantee-icon">⚡</div>
+          <div class="guarantee-content">
+            <h4>Garantie Appareil 2 Ans</h4>
+            <p>Remplacement à neuf immédiat en cas de pépin technique sur votre appareil IPL.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FAQ DYNAMIQUE -->
+    <section class="faq-section">
+      <h2 class="section-title">Questions Fréquentes</h2>
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Est-ce que l'utilisation de l'IPL Rivelo est douloureuse ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Contrairement à la cire ou aux lasers professionnels d'ancienne génération, Rivelo émet un flash lumineux doux ciblant directement le pigment du poil à la racine sans agresser la surface de la peau. La plupart des utilisateurs ressentent seulement une légère sensation de chaleur passagère.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quand vais-je voir les premiers résultats ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Les premiers résultats visibles apparaissent généralement après 2 à 4 semaines d'utilisation régulière (à raison d'une séance par semaine). La repousse devient plus lente et les poils nettement plus fins.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Sur quelles zones du corps puis-je l'utiliser ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>L'appareil Rivelo est conçu pour une utilisation en toute sécurité sur l'ensemble du corps : jambes, aisselles, maillot, bras et visage (en dessous des pommettes).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Comment fonctionne la réduction de -20% au lancement ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>En vous inscrivant aujourd'hui, votre adresse courriel est enregistrée sur la liste prioritaire. Le 3 novembre, vous recevrez un code promotionnel personnel valide pendant 72 heures pour commander votre appareil au tarif VIP de 239,20 $ au lieu de 299,00 $.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -548,6 +744,7 @@
   </footer>
 
   <script>
+    /* Script du Compte à rebours */
     const targetDate = new Date("November 3, 2026 19:00:00").getTime();
 
     function updateCountdown() {
@@ -569,6 +766,24 @@
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    /* Script de l'Accordéon FAQ */
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Ferme tous les autres accordéons
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // Ouvre l'accordéon cliqué s'il n'était pas actif
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
