@@ -13,15 +13,12 @@
       --bg-banner: #e8e6dc;
       --card-bg: #13171f;
       --card-light: #ebdcd0;
-      --accent-gold: #d4af37;
       --accent-pink: #f2a6a6;
-      --accent-red: #e57373;
-      --accent-green: #81c784;
       --text-main: #ffffff;
       --text-banner: #1c1c1c;
       --text-muted: #9ba0a8;
-      --border-color: rgba(255, 255, 255, 0.12);
-      --glow-effect: 0 0 50px rgba(212, 175, 55, 0.08);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --glow-effect: 0 0 50px rgba(242, 166, 166, 0.08);
     }
 
     * {
@@ -90,7 +87,7 @@
 
     h1 span {
       font-style: italic;
-      color: var(--accent-gold);
+      color: var(--accent-pink);
       display: block;
     }
 
@@ -115,13 +112,13 @@
     }
 
     .price-tag .discount {
-      background: rgba(212, 175, 55, 0.15);
-      color: var(--accent-gold);
+      background: rgba(242, 166, 166, 0.15);
+      color: var(--accent-pink);
       font-size: 0.75rem;
       font-weight: 600;
       padding: 4px 12px;
       border-radius: 50px;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border: 1px solid rgba(242, 166, 166, 0.3);
       letter-spacing: 0.05em;
     }
 
@@ -173,7 +170,7 @@
     }
 
     input[type="email"]:focus {
-      border-color: var(--accent-gold);
+      border-color: var(--accent-pink);
     }
 
     button {
@@ -266,18 +263,19 @@
       text-transform: uppercase;
     }
 
-    /* SECTION DOULEURS vs SOLUTIONS (Style US DTC) */
-    .problem-solution-section {
+    /* SECTION COMPARATIVE ROSE */
+    .comparison-section {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 50px auto 30px;
       padding: 0 20px;
     }
 
     .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 30px;
+      font-size: 2.2rem;
+      margin-bottom: 35px;
+      font-weight: 400;
     }
 
     .comparison-grid {
@@ -293,53 +291,60 @@
     }
 
     .comparison-card {
-      padding: 30px;
-      border-radius: 12px;
+      background: var(--card-bg);
       border: 1px solid var(--border-color);
+      padding: 32px;
+      border-radius: 12px;
+      transition: border-color 0.3s ease;
     }
 
-    .comparison-card.old-way {
-      background: rgba(229, 115, 115, 0.03);
-      border-color: rgba(229, 115, 115, 0.2);
-    }
-
-    .comparison-card.new-way {
-      background: rgba(129, 199, 132, 0.03);
-      border-color: rgba(129, 199, 132, 0.2);
+    .comparison-card.highlight {
+      border-color: rgba(242, 166, 166, 0.3);
+      box-shadow: 0 0 30px rgba(242, 166, 166, 0.05);
     }
 
     .comparison-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
 
-    .comparison-card.old-way h3 { color: var(--accent-red); }
-    .comparison-card.new-way h3 { color: var(--accent-green); }
+    .comparison-card.highlight h3 {
+      color: var(--accent-pink);
+    }
 
     .comparison-list {
       list-style: none;
-    }
-
-    .comparison-list li {
-      margin-bottom: 14px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      flex-direction: column;
+      gap: 18px;
     }
 
-    .comparison-list li strong {
+    .comparison-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .comparison-item .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .comparison-item .desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
     }
 
     /* Benefits Section */
     .benefits-section {
       max-width: 1100px;
-      margin: 40px auto 60px;
+      margin: 20px auto 60px;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -356,7 +361,7 @@
     .benefit-card h3 {
       font-size: 1.05rem;
       margin-bottom: 10px;
-      color: var(--accent-gold);
+      color: var(--accent-pink);
       font-weight: 600;
     }
 
@@ -447,27 +452,45 @@
 
     </section>
 
-    <!-- SECTION DOULEURS vs SOLUTIONS -->
-    <section class="problem-solution-section">
-      <h2 class="section-title">Pourquoi changer votre routine ?</h2>
+    <!-- SECTION COMPARATIVE ROSE -->
+    <section class="comparison-section">
+      <h2 class="section-title">Pourquoi repenser votre routine ?</h2>
       <div class="comparison-grid">
         
-        <div class="comparison-card old-way">
-          <h3>✕ L'Épilation Classique</h3>
-          <ul class="comparison-list">
-            <li><span>•</span> <strong>Rendez-vous fréquents :</strong> Des centaines de dollars dépensés chaque année en institut.</li>
-            <li><span>•</span> <strong>Douleur & Irritations :</strong> Boutons rouges, poils incarnés et douleur de la cire.</li>
-            <li><span>•</span> <strong>Perte de temps :</strong> Rasage répété tous les 2-3 jours.</li>
-          </ul>
+        <div class="comparison-card">
+          <h3>Méthodes Traditionnelles</h3>
+          <div class="comparison-list">
+            <div class="comparison-item">
+              <span class="label">Dépenses récurrentes</span>
+              <span class="desc">Plusieurs centaines de dollars engagés chaque année en rasoirs ou instituts.</span>
+            </div>
+            <div class="comparison-item">
+              <span class="label">Friction & Inconfort</span>
+              <span class="desc">Risque fréquent de rougeurs, coupures et poils incarnés après chaque séance.</span>
+            </div>
+            <div class="comparison-item">
+              <span class="label">Contrainte de temps</span>
+              <span class="desc">Entretien répété tous les 2 à 3 jours pour maintenir le résultat.</span>
+            </div>
+          </div>
         </div>
 
-        <div class="comparison-card new-way">
-          <h3>✓ L'Expérience Rivelo</h3>
-          <ul class="comparison-list">
-            <li><span>•</span> <strong>Paiement unique :</strong> Rentabilisé dès les premières semaines d'utilisation.</li>
-            <li><span>•</span> <strong>Sans douleur :</strong> Technologie IPL douce adaptée aux peaux sensibles.</li>
-            <li><span>•</span> <strong>Résultats durables :</strong> Une peau lisse au quotidien depuis chez vous.</li>
-          </ul>
+        <div class="comparison-card highlight">
+          <h3>L'Approche Rivelo</h3>
+          <div class="comparison-list">
+            <div class="comparison-item">
+              <span class="label">Investissement Unique</span>
+              <span class="desc">Un seul appareil rentabilisé dès les premières semaines d'utilisation.</span>
+            </div>
+            <div class="comparison-item">
+              <span class="label">Douceur Ciblée</span>
+              <span class="desc">Technologie IPL conçue pour respecter les peaux sensibles directement chez vous.</span>
+            </div>
+            <div class="comparison-item">
+              <span class="label">Résultats Durables</span>
+              <span class="desc">Une réduction progressive et permanente du poil au fil des sessions.</span>
+            </div>
+          </div>
         </div>
 
       </div>
