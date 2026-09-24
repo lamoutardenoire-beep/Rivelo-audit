@@ -21,7 +21,7 @@
       --text-banner: #1c1c1c;
       --text-muted: #9ba0a8;
       --border-color: rgba(255, 255, 255, 0.1);
-      --glow-effect: 0 0 50px rgba(242, 166, 166, 0.08);
+      --glow-effect: 0 0 50px rgba(242, 166, 166, 0.12);
     }
 
     * {
@@ -96,15 +96,16 @@
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--accent-pink);
       margin-bottom: 12px;
-      display: block;
+      display: inline-block;
+      font-weight: 600;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      line-height: 1.15;
+      font-size: 2.7rem;
+      line-height: 1.18;
       margin-bottom: 15px;
       font-weight: 400;
     }
@@ -149,8 +150,23 @@
     .description {
       color: var(--text-muted);
       font-size: 0.95rem;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       max-width: 480px;
+    }
+
+    /* Social Proof Banner */
+    .social-proof-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
     }
 
     /* Form Box */
@@ -160,6 +176,7 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: var(--glow-effect);
+      position: relative;
     }
 
     .form-box p {
@@ -224,6 +241,15 @@
       margin-top: 15px;
       font-size: 0.75rem;
       color: var(--text-muted);
+    }
+
+    .security-note {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 10px;
     }
 
     /* VISUAL BOX VIDEO */
@@ -291,7 +317,7 @@
       text-transform: uppercase;
     }
 
-    /* SECTION COMPARATIVE */
+    /* SECTION COMPARATIVE - CONTRASTE ACCENTUÉ */
     .comparison-section {
       max-width: 1100px;
       margin: 50px auto 30px;
@@ -324,11 +350,27 @@
       padding: 32px;
       border-radius: 12px;
       transition: border-color 0.3s ease;
+      position: relative;
     }
 
     .comparison-card.highlight {
-      border-color: rgba(242, 166, 166, 0.4);
-      box-shadow: 0 0 30px rgba(242, 166, 166, 0.06);
+      background: linear-gradient(180deg, rgba(242, 166, 166, 0.06) 0%, rgba(19, 23, 31, 1) 100%);
+      border: 1px solid rgba(242, 166, 166, 0.5);
+      box-shadow: 0 0 40px rgba(242, 166, 166, 0.1);
+    }
+
+    .highlight-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent-pink);
+      color: #0b0d10;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .comparison-card h3 {
@@ -619,34 +661,44 @@
     <!-- HERO SECTION -->
     <section class="hero-container">
       
-      <!-- Gauche : Titre + Prix + Formulaire -->
+      <!-- Gauche : Titre axé bénéfice + Formulaire avec réassurance -->
       <div class="hero-content">
         <span class="category-subtitle">— ÉPILATION IPL À DOMICILE</span>
         
-        <h1>Votre technologie IPL. <span>-20% au lancement.</span></h1>
+        <h1>Une peau parfaitement lisse. <span>Directement chez vous.</span></h1>
         
         <div class="price-tag">
           <span class="old">299,00 $</span>
           <span class="new">239,20 $</span>
-          <span class="discount">ÉCONOMISEZ 59,80 $</span>
+          <span class="discount">-20% AU LANCEMENT</span>
         </div>
 
         <p class="description">
-          L'épilation IPL sans rendez-vous et sans salle d'attente. Juste vous, chez vous, quand ça vous convient pour une peau douce durablement.
+          Libérez-vous des contraintes du rasage quotidien et des rendez-vous coûteux en institut grâce à la technologie IPL haute précision.
         </p>
+
+        <!-- Social Proof Bar -->
+        <div class="social-proof-bar">
+          <span class="stars">★★★★★</span>
+          <span><b>438 personnes</b> sur la liste VIP de lancement</span>
+        </div>
 
         <!-- Form Box -->
         <div class="form-box">
-          <p>Réservez votre rabais de -20% avant l'ouverture officielle :</p>
+          <p>Réservez votre tarif préférentiel avant le lancement officiel :</p>
           <form class="input-group" onsubmit="event.preventDefault(); alert('Merci ! Votre réservation est enregistrée.');">
             <input type="email" placeholder="Votre adresse courriel" required>
-            <button type="submit">RECEVOIR MON -20% →</button>
+            <button type="submit">OBTENIR MON CODE -20% →</button>
           </form>
 
           <div class="reassurance-list">
             <span>✓ Gratuit</span>
-            <span>✓ Aucun paiement requis</span>
-            <span>✓ Code valide 72h</span>
+            <span>✓ Sans engagement</span>
+            <span>✓ Accès prioritaire 72h</span>
+          </div>
+
+          <div class="security-note">
+            <span>🔒 Vos informations restent strictement confidentielles.</span>
           </div>
         </div>
 
@@ -709,6 +761,7 @@
         </div>
 
         <div class="comparison-card highlight">
+          <div class="highlight-badge">La Solution Idéale</div>
           <h3>L'Approche Rivelo</h3>
           <div class="comparison-list">
             <div class="comparison-item">
@@ -892,7 +945,7 @@
         document.getElementById("days").innerText = days < 10 ? '0' + days : days;
         document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
         document.getElementById("mins").innerText = minutes < 10 ? '0' + minutes : minutes;
-        document.getElementById("secs").innerText = seconds < 10 ? '0' + seconds : seconds;
+        document.getElementById("secs").innerText = seconds < 10 ? '0' + secs : seconds;
       }
     }
 
