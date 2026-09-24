@@ -6,15 +6,18 @@
   <title>Rivelo | Lancement Exclusif IPL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0b0d0f;
-      --card-bg: #14171a;
-      --accent: #d4af37;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border-color: rgba(255, 255, 255, 0.1);
+      --bg-color: #0b0d10;
+      --bg-banner: #e8e6dc;
+      --card-bg: #14181f;
+      --card-light: #ebdcd0;
+      --accent-pink: #eeb5b5;
+      --text-main: #ffffff;
+      --text-banner: #1c1c1c;
+      --text-muted: #9ba0a8;
+      --border-color: rgba(255, 255, 255, 0.12);
     }
 
     * {
@@ -32,17 +35,19 @@
     }
 
     header {
-      padding: 20px 0;
+      background-color: var(--bg-banner);
+      padding: 18px 0;
       text-align: center;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
     }
 
     .brand-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      letter-spacing: 0.2em;
+      font-size: 1.6rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: #ffffff;
+      color: var(--text-banner);
+      font-weight: 500;
     }
 
     .hero-container {
@@ -66,32 +71,43 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
       padding: 6px 14px;
       border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 25px;
+      letter-spacing: 0.05em;
+    }
+
+    .category-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: block;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      line-height: 1.2;
+      font-size: 2.8rem;
+      line-height: 1.15;
       margin-bottom: 15px;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     h1 span {
       font-style: italic;
-      color: var(--accent);
+      color: var(--text-main);
+      display: block;
     }
 
     .price-tag {
       font-size: 1.3rem;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -101,27 +117,30 @@
       text-decoration: line-through;
       color: var(--text-muted);
       font-size: 1.1rem;
-Old    }
+    }
 
     .price-tag .new {
-      font-weight: 700;
-      color: #ffffff;
-      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 1.8rem;
     }
 
     .price-tag .discount {
-      background: var(--accent);
-      color: #000;
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      letter-spacing: 0.05em;
     }
 
     .description {
       color: var(--text-muted);
-      font-size: 1rem;
+      font-size: 0.95rem;
       margin-bottom: 25px;
+      max-width: 480px;
     }
 
     /* Form Box */
@@ -129,14 +148,13 @@ Old    }
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 8px;
     }
 
     .form-box p {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-bottom: 15px;
-      font-weight: 500;
+      color: var(--text-main);
     }
 
     .input-group {
@@ -154,61 +172,59 @@ Old    }
     input[type="email"] {
       flex: 1;
       padding: 14px 16px;
-      border-radius: 8px;
+      border-radius: 4px;
       border: 1px solid var(--border-color);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.3);
       color: #fff;
-      font-size: 1rem;
+      font-size: 0.95rem;
       outline: none;
     }
 
     input[type="email"]:focus {
-      border-color: var(--accent);
+      border-color: rgba(255,255,255,0.4);
     }
 
     button {
-      background: var(--text-main);
-      color: #000;
+      background: #ffffff;
+      color: #000000;
       border: none;
-      padding: 14px 24px;
-      border-radius: 8px;
+      padding: 14px 22px;
+      border-radius: 4px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
     }
 
     button:hover {
-      background: var(--accent);
+      background: var(--bg-banner);
     }
 
     .reassurance-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 12px;
       margin-top: 15px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
-    }
-
-    .reassurance-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
     }
 
     /* Visual Box */
     .visual-box {
-      position: relative;
-      text-align: center;
+      background: var(--card-light);
+      border-radius: 4px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .product-img {
       max-width: 100%;
       height: auto;
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
+      object-fit: contain;
     }
 
     /* Countdown */
@@ -219,65 +235,38 @@ Old    }
     }
 
     .countdown-title {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .timer {
       display: flex;
-      gap: 15px;
+      gap: 12px;
     }
 
     .time-unit {
       text-align: center;
       background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
       padding: 8px 12px;
-      border-radius: 6px;
-      min-width: 65px;
+      border-radius: 4px;
+      min-width: 60px;
     }
 
     .time-unit .number {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-main);
       display: block;
     }
 
     .time-unit .label {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
       text-transform: uppercase;
-    }
-
-    /* Benefits Section */
-    .benefits-section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .benefit-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .benefit-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .benefit-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
     }
 
     footer {
@@ -285,7 +274,7 @@ Old    }
       padding: 30px 20px;
       border-top: 1px solid var(--border-color);
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
   </style>
 </head>
@@ -300,40 +289,39 @@ Old    }
       
       <!-- Content Left -->
       <div class="hero-content">
-        <div class="badge">
-          <span>⚡ Lancement officiel : 3 Novembre à 19h</span>
-        </div>
+        <span class="category-subtitle">— ÉPILATION IPL À DOMICILE</span>
         
-        <h1>Votre technologie IPL. <span>-20% au lancement.</span></h1>
+        <h1>Votre IPL. <span>–20% au lancement.</span></h1>
         
         <div class="price-tag">
-          <span class="old">299,00 $</span>
+          <span class="old">299 $</span>
           <span class="new">239,20 $</span>
           <span class="discount">ÉCONOMISEZ 59,80 $</span>
         </div>
 
         <p class="description">
-          La lumière pulsée intégrée à votre routine : depuis chez vous, à votre rythme, sans aucun rendez-vous. Première série limitée à 500 appareils.
+          La lumière pulsée intégrée à votre routine : depuis chez vous, à votre rythme, sans rendez-vous. Première série limitée à 500 appareils.
         </p>
 
         <!-- Form Box -->
         <div class="form-box">
-          <p>Réservez votre rabais de -20% avant l'ouverture officielle :</p>
-          <form class="input-group" onsubmit="event.preventDefault(); alert('Merci ! Votre code de -20% vous sera envoyé le 3 novembre.');">
+          <p>Recevez votre -20 % au lancement (code envoyé le 3 novembre à 19 h) :</p>
+          <form class="input-group" onsubmit="event.preventDefault(); alert('Merci ! Votre code vous sera envoyé le 3 novembre.');">
             <input type="email" placeholder="Votre adresse courriel" required>
-            <button type="submit">RECEVOIR MON -20% →</button>
+            <button type="submit">RECEVOIR MON -20 % →</button>
           </form>
 
           <div class="reassurance-list">
-            <span class="reassurance-item">✓ Gratuit</span>
-            <span class="reassurance-item">✓ Aucun paiement requis</span>
-            <span class="reassurance-item">✓ Code valide 72h</span>
+            <span>✓ Gratuit</span>
+            <span>✓ Aucun paiement</span>
+            <span>✓ Code valide 72 h</span>
+            <span>✓ Désabonnement en un clic</span>
           </div>
         </div>
 
         <!-- Timer -->
         <div class="countdown-container">
-          <div class="countdown-title">Ouverture des ventes dans :</div>
+          <div class="countdown-title">Lancement officiel le 3 Novembre à 19 h :</div>
           <div class="timer">
             <div class="time-unit">
               <span class="number" id="days">00</span>
@@ -358,25 +346,9 @@ Old    }
 
       <!-- Content Right / Visual -->
       <div class="visual-box">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Rivelo IPL Device" class="product-img">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Rivelo IPL" class="product-img">
       </div>
 
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-      <div class="benefit-card">
-        <h3>Prototypage & Performance</h3>
-        <p>Une technologie de lumière pulsée sécurisée, pensée pour une utilisation simple et rapide directement à domicile.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Économie à long terme</h3>
-        <p>Rentabilisé dès les premières séances comparativement aux rendez-vous récurrents en institut spécialisé.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Série Limitée</h3>
-        <p>Seulement 500 unités réservées pour la première vague d'expédition du 3 novembre.</p>
-      </div>
     </section>
   </main>
 
@@ -385,7 +357,6 @@ Old    }
   </footer>
 
   <script>
-    // Timer jusqu'au 3 Novembre 2026 à 19:00:00
     const targetDate = new Date("November 3, 2026 19:00:00").getTime();
 
     function updateCountdown() {
