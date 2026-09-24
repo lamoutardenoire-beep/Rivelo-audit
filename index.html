@@ -6,20 +6,20 @@
   <title>Rivelo | Lancement Exclusif IPL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #0b0d10;
       --bg-banner: #e8e6dc;
       --card-bg: #13171f;
       --card-light: #ebdcd0;
-      --accent-pink: #f2a6a6;
       --accent-gold: #d4af37;
+      --accent-pink: #f2a6a6;
       --text-main: #ffffff;
       --text-banner: #1c1c1c;
       --text-muted: #9ba0a8;
       --border-color: rgba(255, 255, 255, 0.12);
-      --glow-effect: 0 0 40px rgba(242, 166, 166, 0.15);
+      --glow-effect: 0 0 50px rgba(212, 175, 55, 0.08);
     }
 
     * {
@@ -38,7 +38,7 @@
 
     header {
       background-color: var(--bg-banner);
-      padding: 18px 0;
+      padding: 16px 0;
       text-align: center;
       border-bottom: 1px solid rgba(0,0,0,0.05);
     }
@@ -49,7 +49,7 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--text-banner);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .hero-container {
@@ -65,7 +65,7 @@
     @media (min-width: 768px) {
       .hero-container {
         grid-template-columns: 1.1fr 0.9fr;
-        padding: 60px 20px;
+        padding: 50px 20px;
       }
     }
 
@@ -88,13 +88,13 @@
 
     h1 span {
       font-style: italic;
-      color: var(--accent-pink);
+      color: var(--accent-gold);
       display: block;
     }
 
     .price-tag {
       font-size: 1.3rem;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -107,19 +107,19 @@
     }
 
     .price-tag .new {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-main);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
     }
 
     .price-tag .discount {
-      background: rgba(242, 166, 166, 0.15);
-      color: var(--accent-pink);
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--accent-gold);
       font-size: 0.75rem;
       font-weight: 600;
       padding: 4px 12px;
       border-radius: 50px;
-      border: 1px solid rgba(242, 166, 166, 0.3);
+      border: 1px solid rgba(212, 175, 55, 0.3);
       letter-spacing: 0.05em;
     }
 
@@ -137,17 +137,13 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: var(--glow-effect);
-      transition: border-color 0.3s ease;
-    }
-
-    .form-box:hover {
-      border-color: rgba(242, 166, 166, 0.3);
     }
 
     .form-box p {
       font-size: 0.9rem;
       margin-bottom: 15px;
       color: var(--text-main);
+      font-weight: 500;
     }
 
     .input-group {
@@ -175,11 +171,11 @@
     }
 
     input[type="email"]:focus {
-      border-color: var(--accent-pink);
+      border-color: var(--accent-gold);
     }
 
     button {
-      background: var(--card-light);
+      background: var(--bg-banner);
       color: #1a1a1a;
       border: none;
       padding: 14px 22px;
@@ -194,7 +190,7 @@
 
     button:hover {
       background: #ffffff;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
       transform: translateY(-1px);
     }
 
@@ -215,7 +211,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       box-shadow: var(--glow-effect);
       overflow: hidden;
     }
@@ -225,11 +220,6 @@
       height: auto;
       border-radius: 8px;
       object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .visual-box:hover .product-img {
-      transform: scale(1.02);
     }
 
     /* Countdown */
@@ -259,12 +249,6 @@
       padding: 10px 14px;
       border-radius: 8px;
       min-width: 65px;
-      transition: all 0.3s ease;
-    }
-
-    .time-unit:hover {
-      border-color: var(--accent-pink);
-      background: rgba(242, 166, 166, 0.05);
     }
 
     .time-unit .number {
@@ -280,10 +264,10 @@
       text-transform: uppercase;
     }
 
-    /* Benefits Section */
+    /* Benefits Section (Conforme à l'image) */
     .benefits-section {
       max-width: 1100px;
-      margin: 40px auto;
+      margin: 40px auto 60px;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -293,25 +277,27 @@
     .benefit-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      padding: 25px;
-      border-radius: 12px;
+      padding: 28px;
+      border-radius: 10px;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .benefit-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(242, 166, 166, 0.3);
+      border-color: rgba(212, 175, 55, 0.3);
     }
 
     .benefit-card h3 {
       font-size: 1.05rem;
       margin-bottom: 10px;
-      color: var(--text-main);
+      color: var(--accent-gold);
+      font-weight: 600;
     }
 
     .benefit-card p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     footer {
@@ -332,56 +318,55 @@
   <main>
     <section class="hero-container">
       
-      <!-- Content Left -->
+      <!-- Left Column -->
       <div class="hero-content">
         <span class="category-subtitle">— ÉPILATION IPL À DOMICILE</span>
         
-        <h1>Votre IPL. <span>–20% au lancement.</span></h1>
+        <h1>Votre technologie IPL. <span>-20% au lancement.</span></h1>
         
         <div class="price-tag">
-          <span class="old">299 $</span>
+          <span class="old">299,00 $</span>
           <span class="new">239,20 $</span>
           <span class="discount">ÉCONOMISEZ 59,80 $</span>
         </div>
 
         <p class="description">
-          La lumière pulsée intégrée à votre routine : depuis chez vous, à votre rythme, sans rendez-vous. Première série limitée à 500 appareils.
+          La lumière pulsée intégrée à votre routine : depuis chez vous, à votre rythme, sans aucun rendez-vous. Première série limitée à 500 appareils.
         </p>
 
         <!-- Form Box -->
         <div class="form-box">
-          <p>Recevez votre -20 % au lancement (code envoyé le 3 novembre à 19 h) :</p>
-          <form class="input-group" onsubmit="event.preventDefault(); alert('Merci ! Votre code vous sera envoyé le 3 novembre.');">
+          <p>Réservez votre rabais de -20% avant l'ouverture officielle :</p>
+          <form class="input-group" onsubmit="event.preventDefault(); alert('Merci ! Votre réservation est enregistrée.');">
             <input type="email" placeholder="Votre adresse courriel" required>
-            <button type="submit">RECEVOIR MON -20 % →</button>
+            <button type="submit">RECEVOIR MON -20% →</button>
           </form>
 
           <div class="reassurance-list">
             <span>✓ Gratuit</span>
-            <span>✓ Aucun paiement</span>
-            <span>✓ Code valide 72 h</span>
-            <span>✓ Désabonnement en un clic</span>
+            <span>✓ Aucun paiement requis</span>
+            <span>✓ Code valide 72h</span>
           </div>
         </div>
 
         <!-- Timer -->
         <div class="countdown-container">
-          <div class="countdown-title">Lancement officiel le 3 Novembre à 19 h :</div>
+          <div class="countdown-title">Ouverture des ventes dans :</div>
           <div class="timer">
             <div class="time-unit">
-              <span class="number" id="days">00</span>
+              <span class="number" id="days">40</span>
               <span class="label">Jours</span>
             </div>
             <div class="time-unit">
-              <span class="number" id="hours">00</span>
+              <span class="number" id="hours">09</span>
               <span class="label">Heures</span>
             </div>
             <div class="time-unit">
-              <span class="number" id="mins">00</span>
+              <span class="number" id="mins">52</span>
               <span class="label">Min</span>
             </div>
             <div class="time-unit">
-              <span class="number" id="secs">00</span>
+              <span class="number" id="secs">20</span>
               <span class="label">Sec</span>
             </div>
           </div>
@@ -389,26 +374,26 @@
 
       </div>
 
-      <!-- Content Right / Visual -->
+      <!-- Right Column -->
       <div class="visual-box">
         <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Rivelo IPL" class="product-img">
       </div>
 
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Bottom Benefits Section -->
     <section class="benefits-section">
       <div class="benefit-card">
-        <h3>Technologie Sécurisée</h3>
-        <p>Conçue pour une utilisation simple et sans douleur à domicile.</p>
+        <h3>Prototypage & Performance</h3>
+        <p>Une technologie de lumière pulsée sécurisée, pensée pour une utilisation simple et rapide directement à domicile.</p>
       </div>
       <div class="benefit-card">
-        <h3>Économie Durable</h3>
-        <p>Rentabilisé dès les premières séances face aux coûts en institut.</p>
+        <h3>Économie à long terme</h3>
+        <p>Rentabilisé dès les premières séances comparativement aux rendez-vous récurrents en institut spécialisé.</p>
       </div>
       <div class="benefit-card">
         <h3>Série Limitée</h3>
-        <p>Seulement 500 unités disponibles pour la première vague du 3 novembre.</p>
+        <p>Seulement 500 unités réservées pour la première vague d'expédition du 3 novembre.</p>
       </div>
     </section>
   </main>
