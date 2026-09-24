@@ -34,7 +34,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* HEADER AVEC LOGO ET SOUS-TITRE OFFICIEL */
+    /* HEADER */
     header {
       background-color: var(--bg-banner);
       padding: 18px 0;
@@ -221,7 +221,7 @@
       color: var(--text-muted);
     }
 
-    /* CONTENEUR VISUEL AJUSTÉ */
+    /* CONTENEUR VISUEL VIDÉO */
     .visual-box {
       background: transparent;
       border: none;
@@ -235,7 +235,7 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 60px rgba(242, 166, 166, 0.08);
     }
 
-    .product-img {
+    .product-video {
       width: 100%;
       height: auto;
       max-height: 520px;
@@ -397,7 +397,7 @@
       line-height: 1.5;
     }
 
-    /* SECTION GARANTIES & RÉASSURANCE (LOSS AVERSION) */
+    /* GARANTIES */
     .guarantees-section {
       max-width: 1100px;
       margin: 40px auto;
@@ -443,7 +443,7 @@
       line-height: 1.4;
     }
 
-    /* SECTION FAQ DYNAMIQUE (ACCORDÉON) */
+    /* FAQ ACCORDÉON */
     .faq-section {
       max-width: 800px;
       margin: 60px auto;
@@ -595,14 +595,17 @@
 
       </div>
 
-      <!-- Right Column: Visuel produit retravaillé -->
+      <!-- Right Column: Vidéo démonstration -->
       <div class="visual-box">
-        <img src="rivelo-product.png" alt="Appareil d'épilation IPL Rivelo tenu en main" class="product-img">
+        <video autoplay loop muted playsinline class="product-video">
+          <source src="rivelo-demo.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture de vidéos.
+        </video>
       </div>
 
     </section>
 
-    <!-- SECTION COMPARATIVE NEUROMARKETING -->
+    <!-- SECTION COMPARATIVE -->
     <section class="comparison-section">
       <h2 class="section-title">Pourquoi repenser votre routine ?</h2>
       <div class="comparison-grid">
@@ -646,7 +649,7 @@
       </div>
     </section>
 
-    <!-- Bottom Benefits Section -->
+    <!-- Benefits Section -->
     <section class="benefits-section">
       <div class="benefit-card">
         <h3>Technologie Professionnelle</h3>
@@ -662,7 +665,7 @@
       </div>
     </section>
 
-    <!-- SECTION GARANTIES & RÉASSURANCE -->
+    <!-- GARANTIES -->
     <section class="guarantees-section">
       <div class="guarantees-grid">
         <div class="guarantee-item">
@@ -689,7 +692,7 @@
       </div>
     </section>
 
-    <!-- SECTION FAQ DYNAMIQUE -->
+    <!-- FAQ -->
     <section class="faq-section">
       <h2 class="section-title">Questions Fréquentes</h2>
       <div class="faq-container">
@@ -744,7 +747,7 @@
   </footer>
 
   <script>
-    /* Script du Compte à rebours */
+    /* Compte à rebours */
     const targetDate = new Date("November 3, 2026 19:00:00").getTime();
 
     function updateCountdown() {
@@ -767,18 +770,16 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    /* Script de l'Accordéon FAQ */
+    /* Accordéon FAQ */
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', () => {
         const faqItem = button.parentElement;
         const isActive = faqItem.classList.contains('active');
         
-        // Ferme tous les autres accordéons
         document.querySelectorAll('.faq-item').forEach(item => {
           item.classList.remove('active');
         });
 
-        // Ouvre l'accordéon cliqué s'il n'était pas actif
         if (!isActive) {
           faqItem.classList.add('active');
         }
