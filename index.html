@@ -15,6 +15,8 @@
       --card-light: #ebdcd0;
       --accent-gold: #d4af37;
       --accent-pink: #f2a6a6;
+      --accent-red: #e57373;
+      --accent-green: #81c784;
       --text-main: #ffffff;
       --text-banner: #1c1c1c;
       --text-muted: #9ba0a8;
@@ -264,7 +266,77 @@
       text-transform: uppercase;
     }
 
-    /* Benefits Section (Conforme à l'image) */
+    /* SECTION DOULEURS vs SOLUTIONS (Style US DTC) */
+    .problem-solution-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .comparison-card {
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .comparison-card.old-way {
+      background: rgba(229, 115, 115, 0.03);
+      border-color: rgba(229, 115, 115, 0.2);
+    }
+
+    .comparison-card.new-way {
+      background: rgba(129, 199, 132, 0.03);
+      border-color: rgba(129, 199, 132, 0.2);
+    }
+
+    .comparison-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .comparison-card.old-way h3 { color: var(--accent-red); }
+    .comparison-card.new-way h3 { color: var(--accent-green); }
+
+    .comparison-list {
+      list-style: none;
+    }
+
+    .comparison-list li {
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .comparison-list li strong {
+      color: var(--text-main);
+    }
+
+    /* Benefits Section */
     .benefits-section {
       max-width: 1100px;
       margin: 40px auto 60px;
@@ -279,12 +351,6 @@
       border: 1px solid var(--border-color);
       padding: 28px;
       border-radius: 10px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(212, 175, 55, 0.3);
     }
 
     .benefit-card h3 {
@@ -379,6 +445,32 @@
         <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Rivelo IPL" class="product-img">
       </div>
 
+    </section>
+
+    <!-- SECTION DOULEURS vs SOLUTIONS -->
+    <section class="problem-solution-section">
+      <h2 class="section-title">Pourquoi changer votre routine ?</h2>
+      <div class="comparison-grid">
+        
+        <div class="comparison-card old-way">
+          <h3>✕ L'Épilation Classique</h3>
+          <ul class="comparison-list">
+            <li><span>•</span> <strong>Rendez-vous fréquents :</strong> Des centaines de dollars dépensés chaque année en institut.</li>
+            <li><span>•</span> <strong>Douleur & Irritations :</strong> Boutons rouges, poils incarnés et douleur de la cire.</li>
+            <li><span>•</span> <strong>Perte de temps :</strong> Rasage répété tous les 2-3 jours.</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card new-way">
+          <h3>✓ L'Expérience Rivelo</h3>
+          <ul class="comparison-list">
+            <li><span>•</span> <strong>Paiement unique :</strong> Rentabilisé dès les premières semaines d'utilisation.</li>
+            <li><span>•</span> <strong>Sans douleur :</strong> Technologie IPL douce adaptée aux peaux sensibles.</li>
+            <li><span>•</span> <strong>Résultats durables :</strong> Une peau lisse au quotidien depuis chez vous.</li>
+          </ul>
+        </div>
+
+      </div>
     </section>
 
     <!-- Bottom Benefits Section -->
